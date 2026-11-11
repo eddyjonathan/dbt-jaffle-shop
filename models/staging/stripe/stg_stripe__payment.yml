@@ -1,0 +1,19 @@
+models:
+  - name: stg_stripe_payments.sql
+    columns: id
+    description: Id of the transaction
+
+    columns: order_id
+    description: Foreign key to orders
+
+    columns: payment_method
+    description: "{{ doc('payment_method')}}"
+
+    columns: status
+    description: Can be either 'success' or 'fail'.
+
+    columns: amount
+    description: The amount paid by the customer. It should be positive.
+
+    columns: created
+    description: when the transaction happened
