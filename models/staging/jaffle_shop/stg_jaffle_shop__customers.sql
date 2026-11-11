@@ -5,4 +5,5 @@ select
     first_name,
     last_name
 
-from raw.jaffle_shop.customers  -- catalog.schema.table in Databricks
+--from raw.jaffle_shop.customers  -- catalog.schema.table in Databricks
+from {{ source('jaffle_shop','customers') }}

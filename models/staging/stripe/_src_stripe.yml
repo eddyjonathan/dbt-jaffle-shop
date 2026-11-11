@@ -1,0 +1,11 @@
+sources:
+  - name: stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        config:
+         load_at_field: "cast(created as timestamp)"
+         freshness:
+           warn_after: {count: 3000, period: day}
+           error_after: {count: 3650, period: day}
